@@ -27,9 +27,9 @@ Potete utilizzare Face++ per ottenere alcuni attributi e integrare il risultato 
 
 ### Task
 
-* Analizzare una foto e stampare il json risultato con genere ed età
+* Analizzare una foto e stampare il risultato con genere ed età
 * Scaricare da Yelp una foto profilo di uno User e analizzarla con Face++
-* Data una ennupla di review.json, risalire allo User e scaricare tutte le sue foto profilo (se possibile, altrimenti una sola). Se si possono scaricare tutte, analizzarle con Face++ e fare una media dei risultati
+* Data una cartella con diverse immagini, analizzarle tutte e stampare il risultato in un csv
 * Trovare un’altra applicazione per inferire l’etnia dalla foto
 
 ## Obiettivo 2: ottenere il ranking dalla pagina HTML di Yelp
@@ -39,11 +39,16 @@ Prendiamo in input una pagina web di Yelp, ad esempio questa:
 
 La pagina contiene i dettagli di un business, in questo caso un ristorante, e dobbiamo riuscire ad estrarre la lista ordinata di tutte le reviews, comprese le pagine seguenti. Nel codice all'interno della cartella Scraping ho già ottenuto le reviews in modo ordinato, ma solo della prima pagina visualizzata, tramite l'utilizzo di XPath. Ovviamente potete decidere se utilizzare XPath o un altro strumento di estrazione dati da pagina web.
 
+XPath demo:
+> https://topswagcode.com/xpath/
+XPath command list:
+> https://devhints.io/xpath
+
 ### Task
 
 * Dato un URL relativo ad un ristorante su Yelp, trovare tramite Xpath la lista ordinata di tutte le recensioni, scorrendo tutte le pagine
 * Fare un retrieve delle review dal dataset tramite il testo
-* Vedi il punto 3 di Face++. Se il dataset risulta sparso (cioè non contiene molte delle review che si cercano) allora risalire allo User id dalla pagina web
+* Date le review trovare lo User corrispondente. Se il dataset risulta sparso (cioè non contiene molte delle review che si cercano) allora risalire allo User id dalla pagina web (Xpath)
 
 ## Obiettivo 3: aumentare i dati delle reviews
 
@@ -51,4 +56,4 @@ Così come per gli utenti, abbiamo bisogno di ulteriori dati sulle reviews in mo
 
 ### Task
 
-* Preso il testo di una review applicare un algoritmo di Sentiment Analysis e stampare i risultati
+* Preso il testo di una review applicare un algoritmo di Sentiment Analysis e stampare i risultati in un csv
