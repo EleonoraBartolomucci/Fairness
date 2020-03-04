@@ -41,6 +41,7 @@ La pagina contiene i dettagli di un business, in questo caso un ristorante, e do
 
 XPath demo:
 > https://topswagcode.com/xpath/
+
 XPath command list:
 > https://devhints.io/xpath
 
