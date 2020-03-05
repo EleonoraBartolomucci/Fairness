@@ -13,10 +13,10 @@ writer = csv.writer(file_parsed)
 # ciclo per tradurre il file .json in quello .csv
 header = ['gender', 'ethnicity']
 
+#creo il writer            
 writer.writerow(header)
 
-# flatten_file = flatten_json(data_parsed)
-# print(flatten_file)
+#ciclo per estrarre dal file json i valori di genere ed etnia
 for persona in data_parsed:
     for face in persona['faces']:
         writer.writerow([face['attributes']['gender']['value'],
