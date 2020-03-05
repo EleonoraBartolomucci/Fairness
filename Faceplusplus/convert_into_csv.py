@@ -11,7 +11,7 @@ file_parsed = open('File_Parsered.csv', 'w')
 writer = csv.writer(file_parsed)
 
 # ciclo per tradurre il file .json in quello .csv
-header = ['gender', 'age', 'emotion', 'ethnicity']
+header = ['gender', 'ethnicity']
 
 writer.writerow(header)
 
