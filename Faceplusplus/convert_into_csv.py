@@ -2,7 +2,7 @@ import json
 import csv
 
 # apro e parso il file .json
-data = open(r'C:\Users\Mela\Desktop\test.txt').read()
+data = open(path_to_my_file\file.txt').read()
 data_parsed = json.loads(data)
 
 # creo e apro un file .csv per scrivere
@@ -19,9 +19,8 @@ writer.writerow(header)
 # print(flatten_file)
 for persona in data_parsed:
     for face in persona['faces']:
-        for attribute in face['attributes'].keys():
-            writer.writerow(attribute)
-# writer.writerow([persona[h] for h in header])
+        writer.writerow([face['attributes']['gender']['value'],
+                         face['attributes']['ethnicity']['value']])
 
 # salvo e chiudo il file .csv
 file_parsed.close()
