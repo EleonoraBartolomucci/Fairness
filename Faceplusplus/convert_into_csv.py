@@ -1,26 +1,25 @@
-import json
 import csv
 
 # apro e parso il file .json
-data = open(path_to_my_file\file.txt').read()
-data_parsed = json.loads(data)
+def convert(response, id):
 
-# creo e apro un file .csv per scrivere
-file_parsed = open('File_Parsered.csv', 'w')
-# creo il writer
-writer = csv.writer(file_parsed)
+    #creo e apro un file .csv per scrivere
+    file_parsed = open('File_Parsered.csv', 'w')
+    
+    #creo il writer
+    writer = csv.writer(file_parsed)
 
-# ciclo per tradurre il file .json in quello .csv
-header = ['gender', 'ethnicity']
+    #ciclo per tradurre il file .json in quello .csv
+    header = ['user', 'age', 'gender', 'ethnicity']
 
-#creo il writer            
-writer.writerow(header)
+    #creo il writer
+    writer.writerow(header)
 
-#ciclo per estrarre dal file json i valori di genere ed etnia
-for persona in data_parsed:
-    for face in persona['faces']:
-        writer.writerow([face['attributes']['gender']['value'],
-                         face['attributes']['ethnicity']['value']])
+    #estrarre dal file json i valori di età, genere ed etnia
+    age = response['outputs'][0]['data']['regions'][0]['data']['face']['age_appearance']['concepts'][0]['name']
+    gender = response['outputs'][0]['data']['regions'][0]['data']['face']['gender_appearance']['concepts'][0]['name']
+    ethnicity = response['outputs'][0]['data']['regions'][0]['data']['face']['multicultural_appearance']['concepts'][0]['name']
+    writer.writerow([id, age, gender, ethnicity])
 
-# salvo e chiudo il file .csv
-file_parsed.close()
+    #salvo e chiudo il file .csv
+    file_parsed.close()
